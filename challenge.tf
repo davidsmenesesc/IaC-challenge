@@ -68,7 +68,7 @@ resource "google_compute_firewall" "ssh" {
     target_tags   = ["web","http-server","https-server",]
     }
     resource "google_compute_instance" "default" {
-        name         = "challenge-vm"
+        name         = var.vm-name
         machine_type = "e2-medium"
         zone         = "us-east1-b"
         tags         = ["ssh","web","http-server","https-server"]
@@ -82,7 +82,7 @@ resource "google_compute_firewall" "ssh" {
             }
         }
         # Install appication
-        #metadata_startup_script = "sudo apt update;sudo apt install apache2;sudo apt-get install ufw;sudo ufw enable;sudo ufw allow 'WWW';sudo rm index.html;sudo touch index.html;echo '<html><body>Hola soy David y esto es mi IaC </body></html>' > ./var/www/html/index.html;"
+        metadata_startup_script = "sudo apt update;sudo apt install apache2;sudo apt-get install ufw;sudo ufw enable;sudo ufw allow 'WWW';sudo rm index.html;sudo touch index.html;echo '<html><body>Hola soy David y esto es mi IaC </body></html>' > ./var/www/html/index.html;"
 
         network_interface {
             network = var.network
