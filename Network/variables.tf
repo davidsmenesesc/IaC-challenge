@@ -13,8 +13,8 @@ variable "sub-network" {
   type = string
   default = "challenge-subnetwork"
 }
-variable "vm-name" {
-  description = "The vm-name"
+variable "vpc_name" {
+  description = "The vpc-name"
   type = string
-  default = "challenge-vm-1"
+  default = "challenge-vpc"
 }

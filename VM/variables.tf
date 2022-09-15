@@ -1,8 +1,3 @@
-variable "project_id" {
-  description = "The project ID to host the network in"
-  type = string
-  default = "rampup-360523"
-}
 variable "network" {
   description = "The VPC name for deployment"
   type = string
@@ -16,5 +11,5 @@ variable "sub-network" {
 variable "vm-name" {
   description = "The vm-name"
   type = string
-  default = "challenge-vm-1"
+  default = "challenge-vm"
 }
